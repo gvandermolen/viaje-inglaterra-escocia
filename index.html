@@ -57,7 +57,7 @@ h1{font-size:23px;line-height:1.18;letter-spacing:-.02em;font-weight:700;margin:
 .chip.acc{background:var(--acc-soft);border-color:transparent;color:var(--acc-2);font-weight:500}
 .chip.win{background:var(--win-soft);border-color:transparent;color:var(--win-ink)}
 nav.tabs{display:none}
-nav.bottomnav{position:fixed;left:0;right:0;bottom:0;z-index:40;display:grid;grid-template-columns:repeat(5,1fr);
+nav.bottomnav{position:fixed;left:0;right:0;bottom:0;z-index:40;display:grid;grid-template-columns:repeat(6,1fr);
   height:calc(var(--navh) + env(safe-area-inset-bottom));padding-bottom:env(safe-area-inset-bottom);
   background:rgba(255,255,255,.94);backdrop-filter:saturate(180%) blur(12px);-webkit-backdrop-filter:saturate(180%) blur(12px);border-top:1px solid var(--line)}
 nav.bottomnav a{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;font-size:11px;font-weight:500;color:var(--muted);text-decoration:none;transition:color .2s}
@@ -263,6 +263,49 @@ details.stay[open]>summary .chev{transform:rotate(180deg)}
   #lb-stage{padding:0 64px} #lb-p{left:14px} #lb-nx{right:14px}
 }
 @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+.bud .seg{display:inline-flex;background:var(--soft);border:1px solid var(--line);border-radius:999px;padding:3px;gap:2px;margin-bottom:14px}
+.bud .seg button{display:inline-flex;align-items:center;gap:6px;border:0;background:transparent;font:600 13px/1 Inter,system-ui,sans-serif;color:var(--muted);padding:9px 14px;border-radius:999px;cursor:pointer;transition:background .2s var(--ease),color .2s}
+.bud .seg button svg{width:15px;height:15px}
+.bud .seg button[aria-selected="true"]{background:var(--surface);color:var(--acc-2);box-shadow:var(--sh)}
+.btot{display:grid;grid-template-columns:1.25fr 1fr;gap:10px;margin-bottom:12px}
+.bt{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:14px;box-shadow:var(--sh);display:flex;flex-direction:column;gap:2px;min-width:0}
+.bt.main{background:var(--acc-soft);border-color:transparent}
+.bt .lab{font-size:12px;color:var(--muted);font-weight:500}
+.bt b{font-size:22px;letter-spacing:-.02em;color:var(--ink);white-space:nowrap}
+.bt.main b{color:var(--acc-2)}
+.bt small{font-size:12.5px;color:var(--muted)}
+.bbar{display:flex;height:9px;border-radius:999px;overflow:hidden;background:var(--line-2);margin:4px 0 8px}
+.bbar span{display:block;height:100%;transition:width .35s var(--ease)}
+.blegend{display:flex;flex-wrap:wrap;gap:6px 12px;font-size:12px;color:var(--ink-2);margin-bottom:14px}
+.blegend span{display:inline-flex;align-items:center;gap:5px}.blegend i{width:9px;height:9px;border-radius:3px;display:inline-block}
+.blegend b{font-weight:600;color:var(--muted)}
+.btable{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--sh);overflow:hidden}
+.bhead,.brow>summary,.bsum{display:grid;grid-template-columns:22px minmax(0,1fr) 78px 78px;gap:8px;align-items:center;padding:11px 12px}
+.bhead{grid-template-columns:minmax(0,1fr) 78px 78px;font-size:11px;text-transform:uppercase;letter-spacing:.05em;color:var(--faint);font-weight:600;background:var(--soft);border-bottom:1px solid var(--line)}
+.bhead span:not(:first-child){text-align:right}
+.brow{border-bottom:1px solid var(--line-2)}
+.brow>summary{list-style:none;cursor:pointer;transition:background .15s}
+.brow>summary::-webkit-details-marker{display:none}
+.brow>summary:hover{background:#fafbfa}
+.brow[open]>summary{background:var(--soft)}
+.bi{display:flex}.bi svg{width:18px;height:18px}
+.bn{font-size:13.5px;font-weight:600;color:var(--ink);min-width:0}
+.bn small{display:block;font-size:11.5px;font-weight:400;color:var(--muted);margin-top:2px}
+.bv{text-align:right;display:flex;flex-direction:column;gap:1px;padding:4px 6px;margin:-4px -6px;border-radius:8px;transition:background .2s,opacity .2s}
+.bv b{font-size:13px;font-weight:600;white-space:nowrap;color:var(--ink-2)}
+.bv small{font-size:11px;color:var(--faint);white-space:nowrap}
+.bud[data-sc="lo"] .bv.mid,.bud[data-sc="mid"] .bv.lo{opacity:.55}
+.bud[data-sc="lo"] .bv.lo,.bud[data-sc="mid"] .bv.mid{background:var(--acc-soft)}
+.bud[data-sc="lo"] .bv.lo b,.bud[data-sc="mid"] .bv.mid b{color:var(--acc-2)}
+.bud[data-sc="lo"] .bhead .lo,.bud[data-sc="mid"] .bhead .mid{color:var(--acc-2)}
+.bdet{padding:2px 14px 14px 42px;font-size:12.5px;line-height:1.55;color:var(--ink-2)}
+.bsrc{margin-top:8px;font-size:11.5px;color:var(--muted);display:flex;flex-wrap:wrap;gap:4px;align-items:baseline}
+.bsrc svg{width:12px;height:12px;align-self:center}
+.bsrc a{color:var(--acc-2)}
+.btotal{border-bottom:0;background:var(--soft)}
+.btotal .bn{font-size:14.5px}.btotal .bv b{font-size:13.5px}
+@media (max-width:370px){.bhead,.brow>summary,.bsum{grid-template-columns:18px minmax(0,1fr) 70px 70px;gap:6px;padding:10px}.bhead{grid-template-columns:minmax(0,1fr) 70px 70px}.bdet{padding-left:14px}}
+@media (min-width:900px){.bhead,.brow>summary,.bsum{grid-template-columns:24px minmax(0,1fr) 110px 110px}.bhead{grid-template-columns:minmax(0,1fr) 110px 110px}.bt b{font-size:26px}}
 </style>
 </head>
 <body>
@@ -308,6 +351,7 @@ details.stay[open]>summary .chev{transform:rotate(180deg)}
   <a href="#s-cast" data-nav="s-cast"><i data-lucide="castle"></i>Castillos</a>
   <a href="#s-hosp" data-nav="s-hosp"><i data-lucide="bed-double"></i>Dormir</a>
   <a href="#s-tips" data-nav="s-tips"><i data-lucide="lightbulb"></i>Consejos</a>
+  <a href="#s-pres" data-nav="s-pres"><i data-lucide="wallet"></i>Costos</a>
 </nav>
 
 <div id="lb" class="ov" role="dialog" aria-modal="true" aria-labelledby="lb-t">
@@ -895,7 +939,110 @@ sec('s-tips','lightbulb','Consejos prácticos','',`
     <li>Los argentinos necesitan la <b>ETA</b> (autorización electrónica de viaje) para entrar al Reino Unido: tramitarla antes del viaje.</li>
     <li>Enchufe tipo G (adaptador). Se paga con tarjeta sin contacto en casi todos lados.</li>
   </ul></div>`);
-sec('s-pres','wallet','Presupuesto','',`<div class="soon">${ic('clock')}Próximamente</div>`);
+/* ===== Presupuesto (estimaciones, revisado 17/10/2026) ===== */
+const FX={usd:1.333,date:'17/10/2026'}; // 1 GBP = 1,333 USD (cierre 16-17/10/2026)
+const NIGHTS={"1–2":2,"3":2,"5–6":2,"7":1,"8–9":3,"10":1,"11–12":2,"13":1}; // 14 noches (Edimburgo = Días 8, 9 y 14)
+const midp=s=>{const m=String(s).match(/£(\d+)\s*[–-]\s*(\d+)/);return m?(+m[1]+ +m[2])/2:null;};
+const lodg=(()=>{let lo=0,mid=0;const rows=[];STAYS.forEach(st=>{const n=NIGHTS[st.pin]||0;const l=st.list.filter(h=>midp(h.p)!=null);
+  const a=l[0],b=l[Math.min(1,l.length-1)];lo+=n*midp(a.p);mid+=n*midp(b.p);rows.push(`${esc(st.stop)} ×${n}: ${esc(a.n)} ~£${midp(a.p)} / ${esc(b.n)} ~£${midp(b.p)}`);});
+  return {lo:Math.round(lo),mid:Math.round(mid),rows};})();
+const S_={
+ ah2:['AirHint EZE–LHR feb 2027','https://deals.airhint.com/cheapest-deals/return/EZE/LHR/2'],
+ ah3:['AirHint EZE–LHR mar 2027','https://deals.airhint.com/cheapest-deals/return/EZE/LHR/3'],
+ af:['Air France Argentina','https://wwws.airfrance.com.ar/es-ar/vuelos-desde-buenos-aires-a-londres'],
+ exp:['Expedia EZE–LHR','https://www.expedia.com/lp/flights/eze/lhr/buenos-aires-to-london'],
+ kay:['KAYAK automáticos Londres','https://www.kayak.com/Cheap-London-Automatic-Car-Rentals.28501.acr.ksp'],
+ qeeq:['QEEQ one-way Londres–Edimburgo','https://m.qeeq.com/one-way-rentals/london-3243-to-edinburgh-3200'],
+ ent:['Enterprise one-way UK','https://www.enterprise.co.uk/en/car-hire/one-way.html'],
+ ich:['iCarhireinsurance','https://www.icarhireinsurance.com/'],
+ which:['Which? excess insurance','https://www.which.co.uk/reviews/car-hire/article/car-hire-advice/car-hire-insurance-aqd1p9P5n1Rs'],
+ fuel:['CarComparison (GOV.UK Fuel Finder)','https://carcomparison.co.uk/fuel-price-index'],
+ govf:['GOV.UK precios semanales','https://www.gov.uk/government/statistics/weekly-road-fuel-prices'],
+ ulez:['TfL ULEZ','https://tfl.gov.uk/modes/driving/ultra-low-emission-zone'],
+ hes:['HES Explorer Pass','https://www.historicenvironment.scot/visit/membership-and-passes/explorer-pass/'],
+ tol:['Torre de Londres','https://www.hrp.org.uk/tower-of-london/visit/tickets-and-prices/'],
+ win:['Windsor Castle','https://www.rct.uk/visit/windsor-castle'],
+ blen:['Blenheim Palace','https://www.blenheimpalace.com/tickets/'],
+ bam:['Bamburgh Castle','https://www.bamburghcastle.com/visit-us/'],
+ hou:['Housesteads (English Heritage)','https://www.english-heritage.org.uk/housesteads/'],
+ edc:['Edinburgh Castle','https://www.edinburghcastle.scot/plan-your-visit/tickets/'],
+ sti:['Stirling Castle','https://www.historicenvironment.scot/visit/all/stirling-castle/plan-your-visit/'],
+ urq:['Urquhart Castle','https://www.historicenvironment.scot/visit/all/urquhart-castle/plan-your-visit/'],
+ eil:['Eilean Donan','https://www.eileandonancastle.com/visit/opening-hours/'],
+ food1:['Roamvisa: costo diario UK','https://roamvisa.com/blog/uk-trip-cost-per-day-realistic-budget/'],
+ food2:['First Day Abroad: precios UK','https://firstdayabroad.com/destinations/united-kingdom/costs'],
+ eta:['Home Office: ETA £20','https://homeofficemedia.blog.gov.uk/electronic-travel-authorisation-eta-factsheet-april-2026/'],
+ ins:['ViajareSIM: seguro Europa 2026','https://www.viajaresim.com/blog/mejor-seguro-viaje-europa/'],
+ ac:['Assist Card (cotizador)','https://www.assistcard.com/ar/b2c/cotizar-online'],
+ air:['Airalo UK 10 GB/15 días','https://www.airalo.com/united-kingdom-esim/uki-mobile-in-15days-10gb'],
+ hola:['Holafly UK','https://esim.holafly.com/esim-united-kingdom/'],
+ hrw:['Heathrow: metro','https://www.heathrow.com/transport-and-directions/by-rail-or-train/london-underground'],
+ tfl:['TfL topes diarios','https://tfl.gov.uk/fares/find-fares/capping'],
+ tfl2:['TfL tarifas 2026','https://tfl.gov.uk/info-for/media/press-releases/2026/february/tfl-reminds-customers-of-changes-to-tube-and-rail-fares-from-1-march']
+};
+// cur: moneda en que está cotizado el ítem; lo/mid en esa moneda
+const BUD=[
+ {g:'fly',ic:'plane',t:'Vuelos EZE→LHR / EDI→EZE',s:'2 pasajes multidestino, económica',cur:'USD',lo:2300,mid:3400,
+  n:'Económico ≈ US$1.150 por persona (ida y vuelta EZE–LHR desde US$1.057–1.150 en feb–mar 2027, Air Canada/LEVEL con escalas). Intermedio ≈ US$1.700 por persona (Air France desde US$1.642 en mar 2027; Expedia indica un rango típico desde US$1.775). Volver desde Edimburgo suele costar parecido o un poco más: buscá como "multidestino".',src:['ah2','ah3','af','exp']},
+ {g:'car',ic:'car',t:'Auto de alquiler · 12 días',s:'Automático, Heathrow → aeropuerto de Edimburgo',cur:'GBP',lo:480,mid:700,
+  n:'Retiro en Heathrow el Día 3 y devolución en el aeropuerto de Edimburgo el Día 15. Incluye el cargo one-way Inglaterra→Escocia (≈US$65–108 en autos chicos según QEEQ; cada empresa lo muestra al cotizar) y el seguro básico CDW con franquicia alta. Referencia: automáticos en Londres ≈US$50/día de promedio (KAYAK). Económico = compacto automático; Intermedio = categoría mediana o SUV chico.',src:['kay','qeeq','ent']},
+ {g:'car',ic:'shield-check',t:'Seguro de franquicia (excess)',s:'Cubre la franquicia del CDW',cur:'GBP',lo:45,mid:120,
+  n:'Económico: póliza independiente (iCarhireinsurance anual desde £41,99; Which? cita Questor a £40,27 al año). Antes de comprar confirmá que acepten residentes de Argentina. Intermedio: cobertura online de terceros a ≈£10/día. La del mostrador suele costar US$20–40 por día (QEEQ).',src:['ich','which','qeeq']},
+ {g:'car',ic:'fuel',t:'Combustible',s:'≈2.100–2.300 km de recorrido',cur:'GBP',lo:240,mid:300,
+  n:'Ruta estimada: Heathrow → Windsor → Cotswolds → Lake District → Muralla → Bamburgh → Edimburgo → Glencoe → Skye (con vueltas por la isla) → Inverness → Cairngorms → Edimburgo ≈ 2.100 km, más ~10 % de desvíos. Nafta sin plomo ≈ 174,2 p/l (promedio UK del 18/10/2026; 175,3 p/l la semana del 12/10). Económico: 2.100 km × 6,5 l/100 km. Intermedio: 2.300 km × 7,5 l/100 km.',src:['fuel','govf']},
+ {g:'car',ic:'square-parking',t:'Estacionamientos · ULEZ',s:'Parkings de atracciones y ciudades',cur:'GBP',lo:40,mid:70,
+  n:'Parkings pagos en Windermere, Glencoe, Old Man of Storr, Fairy Pools, Pitlochry y otros (≈£3–8 cada uno). En Edimburgo conviene un alojamiento con estacionamiento. ULEZ y peaje urbano (congestion charge) de Londres: £0, porque no se maneja dentro de Londres y los autos de alquiler nuevos cumplen la norma ULEZ (el retiro en Heathrow no paga). En el recorrido no hay peajes.',src:['ulez']},
+ {g:'bed',ic:'bed-double',t:'Hospedaje · 14 noches',s:'B&B de la página (Londres 2 noches incluidas)',cur:'GBP',lo:lodg.lo,mid:lodg.mid,
+  n:'Suma noche por noche con los hospedajes de cada parada (precio medio del rango para 2 personas). Económico = la opción más barata de cada parada; Intermedio = la segunda opción. Detalle: '+lodg.rows.join(' · ')+'. La mayoría incluye desayuno.',src:[]},
+ {g:'tix',ic:'ticket',t:'Entradas a castillos y sitios',s:'Para 2, solo lo que abre en feb–mar',cur:'GBP',lo:373,mid:482,
+  n:'Por persona: Torre de Londres £38 · Windsor £32 (anticipada) · Blenheim £31 solo parque y jardines (Económico) o £41 con el palacio (Intermedio; si cierra, Warwick ≈£26) · Bamburgh £21 · Housesteads ≈£13,60 · Eilean Donan £13 (se paga en el lugar). Alnwick está cerrado en invierno. <b>Escocia con el Explorer Pass de Historic Environment Scotland</b>: £38 en invierno (hasta el 25/3) o £48 si arranca después. Cubre Edimburgo (£23,50), Stirling (£18,50) y Urquhart (£14): £56 por separado, o sea ahorra £18 por persona en invierno. En feb–mar 2027 Stirling no se puede reservar con el pase: se entra presentándolo en el lugar. Intermedio suma el pase de £48, Vindolanda (£14,40) y ≈£20 de extras (crucero en Windermere, museos).',src:['tol','win','blen','bam','hou','hes','edc','sti','urq','eil']},
+ {g:'food',ic:'utensils',t:'Comida · 15 días',s:'Para 2, con el desayuno del B&B',cur:'GBP',lo:750,mid:1350,
+  n:'Económico ≈ £50 por día para 2: meal deal o café al mediodía y pub a la noche. Intermedio ≈ £90 por día para 2: almuerzo en pub (£12–18) y cena sentados (£20–40 por persona), con alguna bebida. Londres es más caro que el resto.',src:['food1','food2']},
+ {g:'oth',ic:'file-check',t:'ETA (permiso electrónico UK) ×2',s:'Obligatorio para argentinos',cur:'GBP',lo:40,mid:40,
+  n:'£20 por persona desde el 8/4/2026. Vale 2 años o hasta que venza el pasaporte. Tramitalo solo en gov.uk o en la app oficial UK ETA.',src:['eta']},
+ {g:'oth',ic:'heart-pulse',t:'Seguro de viaje ×2',s:'Asistencia al viajero, 15–16 días',cur:'USD',lo:120,mid:200,
+  n:'Para Europa, 15 días: ≈US$55–110 por persona según la cobertura. Económico ≈US$60 por persona; Intermedio ≈US$100 por persona (coberturas más altas). Cotizá con tu edad en Assist Card o Universal Assistance.',src:['ins','ac']},
+ {g:'oth',ic:'smartphone',t:'eSIM de datos ×2',s:'15 días en Reino Unido',cur:'USD',lo:37,mid:103,
+  n:'Económico: Airalo 10 GB por 15 días, US$18,50 cada una. Intermedio: Holafly ilimitado por 15 días, US$51,50 cada una.',src:['air','hola']},
+ {g:'oth',ic:'train-front',t:'Transporte en Londres + Heathrow',s:'Días 1–2 y regreso a Heathrow el Día 3',cur:'GBP',lo:59,mid:98,
+  n:'Metro y bus con tarjeta contactless: tope de £8,90 por día y por persona en zonas 1–2 (2 días × 2 personas ≈ £36). Heathrow↔centro, ida el Día 1 y vuelta el Día 3 para retirar el auto: Piccadilly line £5,90 off-peak (Económico) o Elizabeth line £15,50 (Intermedio), por persona y por tramo.',src:['hrw','tfl','tfl2']}
+];
+const GRP={fly:['Vuelos','var(--fly)'],car:['Auto y ruta','var(--acc)'],bed:['Hospedaje','#7c3aed'],food:['Comida','var(--star)'],tix:['Entradas','var(--cas)'],oth:['Otros','#64748b']};
+const toUSD=(v,c)=>c==='USD'?v:v*FX.usd, toGBP=(v,c)=>c==='GBP'?v:v/FX.usd;
+const fm=n=>Math.round(n).toLocaleString('es-AR');
+const usd=n=>'US$\u00a0'+fm(n), gbp=n=>'£'+fm(n);
+const tot=k=>BUD.reduce((a,b)=>a+toUSD(b[k],b.cur),0);
+let BSC=localStorage.getItem('bsc')||'lo';
+const cell=(b,k)=>`<div class="bv ${k}"><b>${usd(toUSD(b[k],b.cur))}</b><small>${gbp(toGBP(b[k],b.cur))}</small></div>`;
+const bud=sec('s-pres','wallet','Presupuesto estimado','2 personas · 15 días · feb–mar 2027 · Buenos Aires ⇄ Reino Unido. <b>Todo es estimativo</b>: precios relevados el '+FX.date+' que pueden cambiar.',`
+ <div class="bud" data-sc="${BSC}">
+  <div class="seg" role="tablist" aria-label="Escenario">
+    <button type="button" role="tab" data-sc="lo">${ic('piggy-bank')}Económico</button>
+    <button type="button" role="tab" data-sc="mid">${ic('sparkles')}Intermedio</button>
+  </div>
+  <div class="btot">
+    <div class="bt main"><span class="lab">Total para 2</span><b id="bt-usd"></b><small id="bt-gbp"></small></div>
+    <div class="bt"><span class="lab">Por persona</span><b id="bp-usd"></b><small id="bp-gbp"></small></div>
+  </div>
+  <div class="bbar" id="bbar"></div><div class="blegend" id="bleg"></div>
+  <div class="btable">
+    <div class="bhead"><span>Concepto</span><span class="lo">Económico</span><span class="mid">Intermedio</span></div>
+    ${BUD.map(b=>`<details class="brow"><summary><span class="bi" style="color:${GRP[b.g][1]}">${ic(b.ic)}</span><span class="bn">${esc(b.t)}<small>${esc(b.s)}</small></span>${cell(b,'lo')}${cell(b,'mid')}</summary>
+      <div class="bdet">${b.n}${b.src.length?`<div class="bsrc">${ic('link')}Fuentes (vistas el ${FX.date}): ${b.src.map(k=>`<a href="${S_[k][1]}" target="_blank" rel="noopener">${esc(S_[k][0])}</a>`).join(' · ')}</div>`:`<div class="bsrc">${ic('link')}Fuente: los precios de cada hospedaje en las tarjetas del itinerario.</div>`}</div></details>`).join('')}
+    <div class="brow btotal"><div class="bsum"><span class="bi">${ic('sigma')}</span><span class="bn">Total para 2<small>Por persona: ${usd(tot('lo')/2)} / ${usd(tot('mid')/2)}</small></span>${['lo','mid'].map(k=>`<div class="bv ${k}"><b>${usd(tot(k))}</b><small>${gbp(tot(k)/FX.usd)}</small></div>`).join('')}</div></div>
+  </div>
+  <div class="note">${ic('info')} Tocá un concepto para ver el cálculo y las fuentes. Tipo de cambio: 1 GBP = ${FX.usd.toLocaleString('es-AR')} USD (${FX.date}). <b>Pesos argentinos:</b> la cotización cambia mucho, así que el presupuesto va en dólares; convertí con el tipo de cambio del día en que pagues (tarjeta o MEP) y sumá los impuestos que tenga tu medio de pago. No incluye compras, propinas, pases National Trust/English Heritage ni imprevistos: conviene sumar un 10 % de margen.</div>
+ </div>`);
+function setSc(k){BSC=k;try{localStorage.setItem('bsc',k);}catch(e){}
+  const w=bud.querySelector('.bud');w.dataset.sc=k;w.querySelectorAll('.seg button').forEach(b=>b.setAttribute('aria-selected',b.dataset.sc===k));
+  const T=tot(k);bud.querySelector('#bt-usd').textContent=usd(T);bud.querySelector('#bt-gbp').textContent='≈ '+gbp(T/FX.usd);
+  bud.querySelector('#bp-usd').textContent=usd(T/2);bud.querySelector('#bp-gbp').textContent='≈ '+gbp(T/2/FX.usd);
+  const by={};BUD.forEach(b=>by[b.g]=(by[b.g]||0)+toUSD(b[k],b.cur));
+  bud.querySelector('#bbar').innerHTML=Object.keys(GRP).map(g=>`<span style="width:${(by[g]/T*100).toFixed(2)}%;background:${GRP[g][1]}" title="${GRP[g][0]}"></span>`).join('');
+  bud.querySelector('#bleg').innerHTML=Object.keys(GRP).map(g=>`<span><i style="background:${GRP[g][1]}"></i>${GRP[g][0]} <b>${Math.round(by[g]/T*100)}%</b></span>`).join('');}
+bud.querySelectorAll('.seg button').forEach(b=>b.onclick=()=>setSc(b.dataset.sc));
+setSc(BSC);
+
 // resaltar sección activa en la navegación
 const navLinks=[...document.querySelectorAll('[data-nav]')];
 const io=new IntersectionObserver(ents=>{ents.forEach(en=>{if(en.isIntersecting){navLinks.forEach(a=>a.classList.toggle('on',a.dataset.nav===en.target.id));}});},{rootMargin:'-45% 0px -50% 0px'});
